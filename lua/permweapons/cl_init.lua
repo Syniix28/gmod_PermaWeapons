@@ -54,7 +54,7 @@ local sW2, sH2 = surface.GetTextSize("Sell")
 
 
 local blur = Material("pp/blurscreen")
-function DrawBlur(panel)
+local function DrawBlur(panel)
 	local x, y = panel:LocalToScreen(0, 0)
 
 	surface.SetDrawColor(255, 255, 255, 200)
@@ -157,7 +157,6 @@ net.Receive("_Open_PW_Menu",function(len, ply)
 					end
 				end
 			end
-
 			BuyButton.DoClick = function()
 				net.Start("PW_BuyWeapon")
 				net.WriteString(k)
@@ -191,7 +190,6 @@ net.Receive("_Open_PW_Menu",function(len, ply)
 				Base:Remove()
 			end
 		end
-
 		PosY = PosY + 105
 	end
 end)
